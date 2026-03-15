@@ -1,0 +1,33 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Java Script</h1>
+    <script>
+        //variable declaration
+        //No space between words, no numeric in words, no reserve keywords
+        var myName="ABES";      //global, attach with window
+        document.write(myName);
+        console.log(myName);
+        
+        //JS ececution (Global and local(block) Scope)
+        function hello(){
+            var Mynum=345678;    //local or block level
+            console.log(Mynum);
+        }
+        hello();
+
+        //From ES6.... let and const
+        let msg="window";
+        console.log(msg);
+
+        const msg2="Thanks";
+        console.log(msg2);
+    </script>
+</body>
+</html>!

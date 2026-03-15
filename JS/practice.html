@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Hello People, It's Friday & In Gomti Express</h1>
+    <script>
+        
+        //js variable and values type
+        // primitive : immutable single value and stores in memory.
+
+        //string===
+        var trainName="Gomti Express";
+        console.log("My train name is " + trainName);
+        console.log(typeof(trainName));
+
+        //number
+        var trainNo=12420;
+        console.log("My train number is" + trainNo);
+        console.log(typeof(trainNo));
+
+        //boolean
+        var onTime=true;
+        console.log(trainName + "is on time ? " + onTime);
+        console.log(typeof(onTime));
+
+        //Undefined
+        var trainAdd;
+        console.log(trainName + "address is " + trainAdd);
+        console.log(typeof(myAdd));
+
+        //null
+        var railEmai=null;
+        console.log(trainName + "Rail E- Mail adress is " + railMail);
+        console.log(typeof(railEmail));
+
+        //bigint
+        var myValue=bigint(234567893456);
+        console.log(myValue);
+        console.log(typeof(myValue));
+
+        //symbol
+        var val1=Symbol("Hello");
+        var val2=Symbol("Hello");
+        console.log(val1==val2);
+
+
+        //Reference and Non-Primitive Data Value types....
+
+        //Object {}- values are defined in paired of key-value
+
+        let trainInfo={
+            name="Gomti Express",
+            coch : 20,
+            trainNo : 12420,
+            railEmail : "Indianrailway@gmail.com",
+            ontime : false,
+            adress : null,
+            postion : "D3- 81",
+        }
+        console.log(trainInfo.      );
+        console.log(Object.keys(trainInf0).length);
+        console.log(tainInfo.branch);
+
+        //Array = collection of code ie. perform particular any task
+        let studentDetails=["Elahi", 48, false, "xyz@gmail.com"];
+        console.log(studentDetails[4]);
+        console.log(studentDetails.length);
+
+        for(i=0; i<studentDetails.length; i++){
+            console.log(studentDetails[i]);
+        }
+        
+         //function - block of code ie. perform particular any task
+        function myCal(){
+                   let num1=5;
+                   let num2=10;
+                   let result=num1+num2;
+                   console.log("Addition fo two number is " + (num1 +num2));
+                   console.log(result);
+        }
+        myCal();
+    
+
+    </script>
+</body>
+</html>
