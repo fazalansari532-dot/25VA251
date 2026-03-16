@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript</title>
+</head>
+<body>
+    <script>
+        //functioh : 
+        //normal, with para, without para, and default
+        //normal function
+
+        // function demo(){
+        //     console.log("Hello ABES");
+
+        // }
+        // with parameter
+        // function cal(a,b){
+        //     var num1 = a;
+        //     var num2=b;
+        //     console.log("addition of two number is " + (num1 + num2));
+        // }
+        // cal(2,8)
+
+        //with default parameter
+       
+        // function add(a,b=5){
+        //     var num1=a;
+        //     var num2=b;
+        //     var res1=num1+num2;
+        //     console.log("result is " + res1);
+        // }
+
+        // function mul(a, b=9){
+        //     var num1=a;
+        //     var num2=8;
+        //     var res2=num1*num2;
+        //     console.log("result is " + res2);
+
+        // }
+
+        // function div(a, b=2){
+        //     var num1=a;
+        //     var num2=10;
+        //     var res3=num1/num2;
+        //     console.log("resrult is " + res3)
+        // }
+        // add(10);
+        // mul(2);
+        // div(10);
+
+        // Anonymous functin: Anonymous function wo function hota hai jiska koi naam (name) nahi hota. Ye function usually variable me store kiya jata hai ya kisi aur function ke argument ke roop me use hota hai.
+
+        // let demo1=function{
+        //     console.log("Hello ABES");
+        // }
+        // demo1();
+
+        // // shorter way to write above funciton. ie.: arrow function
+
+        // let demo2=()=>{
+        //     console.log("Hello ABES");
+        // }
+        // demo2();
+
+        // //above function in single line
+
+        // let demo3=()=>console.log("Hello ABES ")
+        // demo3()
+
+        // IIFE function : IIFE (Immediately Invoked Function Expression) JavaScript me ek aisa function hota hai jo declare hone ke turant baad execute ho jata hai.
+
+        // (function(){
+        //     console.log("IIFE in JS");
+        // })();
+
+        // Call Back funtion : A callback function is a function that is passed as an argument to another function and is executed later when that function finishes its task.
+    
+        // call back in synchronous
+        // function addRes(callback){
+        //     var num1=10;
+        //     var num2=89;
+        //     var res=num1+num2;
+        //     callback(res)
+        // }
+        // function result(res){
+        //     console.log("Addition of two number is " + res);
+        // }
+        // addRes(result);
+
+        // callback in asynchronous using setTime API;
+        function hello(){
+            document.writeln("Hello ABES");
+        }
+        setTimeout(hello,3000)
+    </script>
+</body>
+</html>
