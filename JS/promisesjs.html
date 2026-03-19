@@ -84,12 +84,17 @@
             mob : 12345678898,
             email : "xyz@gmail.com"
         };
-
+         
+        // store the object as a JSON string
         localStorage.setItem('userInfo',JSON.stringify(userInfo));
 
         // retrieve the string and parse back into an object
         const saverUser=JSON.parse(localStorage.getItem('userInfo'));
-        console.log(saverUser.name)
+        console.log(saverUser.name);
+
+
+        // JSON
+        // JSON : JSON (JavaScript Object Notation) is a lightweight data format used to store and exchange data. It is easy for humans to read and write, and easy for machines to parse and generate.
 
     </script>
 </body>
