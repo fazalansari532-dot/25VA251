@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Amazon Clone</title>
+
+  <style>
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family:Arial, sans-serif;
+    }
+
+    body{
+      background:#eaeded;
+    }
+
+    /* NAVBAR */
+
+    .navbar{
+      height:60px;
+      background:#131921;
+      color:white;
+      display:flex;
+      align-items:center;
+      justify-content:space-evenly;
+      position:sticky;
+      top:0;
+      z-index:1000;
+    }
+
+    .logo{
+      width:120px;
+      height:50px;
+      background-image:url('https://pngimg.com/uploads/amazon/amazon_PNG11.png');
+      background-size:cover;
+      background-position:center;
+    }
+
+    .border{
+      border:1px solid transparent;
+      padding:5px;
+      cursor:pointer;
+    }
+
+    .border:hover{
+      border:1px solid white;
+    }
+
+    .address p:first-child{
+      color:#ccc;
+      font-size:12px;
+      margin-left:15px;
+    }
+
+    .address-icon{
+      display:flex;
+      align-items:center;
+      gap:5px;
+    }
+
+    .search{
+      display:flex;
+      width:50%;
+      height:40px;
+      border-radius:4px;
+      overflow:hidden;
+    }
+
+    .search select{
+      width:60px;
+      border:none;
+      background:#f3f3f3;
+      padding:5px;
+    }
+
+    .search input{
+      width:100%;
+      border:none;
+      padding-left:10px;
+      font-size:16px;
+      outline:none;
+    }
+
+    .search button{
+      width:50px;
+      border:none;
+      background:#febd69;
+      cursor:pointer;
+      font-size:18px;
+    }
+
+    .nav-text span{
+      font-size:12px;
+    }
+
+    .nav-text p{
+      font-size:14px;
+      font-weight:bold;
+    }
+
+    .cart{
+      display:flex;
+      align-items:center;
+      gap:5px;
+      font-size:18px;
+      font-weight:bold;
+    }
+
+    /* PANEL */
+
+    .panel{
+      height:40px;
+      background:#232f3e;
+      color:white;
+      display:flex;
+      align-items:center;
+      gap:20px;
+      padding-left:20px;
+    }
+
+    .panel div{
+      cursor:pointer;
+    }
+
+    /* HERO */
+
+    .hero{
+      height:350px;
+      background-image:url('https://images.unsplash.com/photo-1523275335684-37898b6baf30?q=80&w=1600&auto=format&fit=crop');
+      background-size:cover;
+      background-position:center;
+      display:flex;
+      justify-content:center;
+      align-items:flex-end;
+    }
+
+    .hero-msg{
+      background:white;
+      width:90%;
+      padding:15px;
+      margin-bottom:25px;
+      text-align:center;
+      font-size:14px;
+    }
+
+    /* PRODUCTS */
+
+    .products{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+      gap:20px;
+      padding:20px;
+    }
+
+    .card{
+      background:white;
+      padding:20px;
+      border-radius:10px;
+      transition:0.3s;
+    }
+
+    .card:hover{
+      transform:translateY(-5px);
+      box-shadow:0 5px 15px rgba(0,0,0,0.2);
+    }
+
+    .card img{
+      width:100%;
+      height:250px;
+      object-fit:cover;
+      margin:15px 0;
+    }
+
+    .card button{
+      width:100%;
+      padding:10px;
+      border:none;
+      background:#ffd814;
+      border-radius:20px;
+      cursor:pointer;
+      font-weight:bold;
+    }
+
+    .card button:hover{
+      background:#f7ca00;
+    }
+
+    /* CART */
+
+    .cart-section{
+      background:white;
+      margin:20px;
+      padding:20px;
+      border-radius:10px;
+    }
+
+    .cart-item{
+      display:flex;
+      justify-content:space-between;
+      margin:10px 0;
+      border-bottom:1px solid #ddd;
+      padding-bottom:10px;
+    }
+
+    .total{
+      font-size:22px;
+      margin-top:20px;
+      font-weight:bold;
+    }
+
+    /* FOOTER */
+
+    footer{
+      background:#131921;
+      color:white;
+      text-align:center;
+      padding:20px;
+      margin-top:20px;
+    }
+
+    @media(max-width:768px){
+      .search{
+        width:35%;
+      }
+
+      .navbar{
+        flex-wrap:wrap;
+        height:auto;
+        padding:10px;
+      }
+
+      .panel{
+        flex-wrap:wrap;
+        height:auto;
+        padding:10px;
+      }
+    }
+
+  </style>
+</head>
+<body>
+
+  <!-- NAVBAR -->
+
+  <div class="navbar">
+
+    <div class="logo border"></div>
+
+    <div class="address border">
+      <p>Deliver to</p>
+      <div class="address-icon">
+        <span>📍</span>
+        <p>India</p>
+      </div>
+    </div>
+
+    <div class="search">
+      <select>
+        <option>All</option>
+        <option>Electronics</option>
+        <option>Fashion</option>
+      </select>
+
+      <input type="text" placeholder="Search Amazon">
+
+      <button>🔍</button>
+    </div>
+
+    <div class="nav-text border">
+      <span>Hello, Sign in</span>
+      <p>Account & Lists</p>
+    </div>
+
+    <div class="nav-text border">
+      <span>Returns</span>
+      <p>& Orders</p>
+    </div>
+
+    <div class="cart border">
+      🛒 Cart
+      <span id="cart-count">0</span>
+    </div>
+
+  </div>
+
+  <!-- PANEL -->
+
+  <div class="panel">
+    <div>☰ All</div>
+    <div>Today's Deals</div>
+    <div>Customer Service</div>
+    <div>Mobiles</div>
+    <div>Electronics</div>
+    <div>Fashion</div>
+  </div>
+
+  <!-- HERO SECTION -->
+
+  <div class="hero">
+    <div class="hero-msg">
+      Welcome to Amazon Clone Website built using HTML, CSS and JavaScript.
+    </div>
+  </div>
+
+  <!-- PRODUCTS -->
+
+  <div class="products" id="products">
+
+  </div>
+
+  <!-- CART -->
+
+  <div class="cart-section">
+    <h2>Shopping Cart</h2>
+
+    <div id="cart-items"></div>
+
+    <div class="total">
+      Total: ₹<span id="total">0</span>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+
+  <footer>
+    © 2026 Amazon Clone | Made with HTML, CSS & JavaScript
+  </footer>
+
+  <!-- JAVASCRIPT -->
+
+  <script>
+
+    const products = [
+      {
+        id:1,
+        name:"Headphones",
+        price:1999,
+        image:"https://images.unsplash.com/photo-1505740420928-5e560c06d30e?q=80&w=1000&auto=format&fit=crop"
+      },
+
+      {
+        id:2,
+        name:"Smart Watch",
+        price:2999,
+        image:"https://images.unsplash.com/photo-1523275335684-37898b6baf30?q=80&w=1000&auto=format&fit=crop"
+      },
+
+      {
+        id:3,
+        name:"Laptop",
+        price:55999,
+        image:"https://images.unsplash.com/photo-1496181133206-80ce9b88a853?q=80&w=1000&auto=format&fit=crop"
+      },
+
+      {
+        id:4,
+        name:"Shoes",
+        price:2499,
+        image:"https://images.unsplash.com/photo-1542291026-7eec264c27ff?q=80&w=1000&auto=format&fit=crop"
+      }
+    ];
+
+    let cart = [];
+
+    const productContainer = document.getElementById("products");
+
+    products.forEach(product => {
+
+      productContainer.innerHTML += `
+        <div class="card">
+          <h2>${product.name}</h2>
+
+          <img src="${product.image}" alt="${product.name}">
+
+          <h3>₹${product.price}</h3>
+
+          <button onclick="addToCart(${product.id})">
+            Add to Cart
+          </button>
+        </div>
+      `;
+    });
+
+    function addToCart(id){
+
+      const product = products.find(item => item.id === id);
+
+      cart.push(product);
+
+      updateCart();
+    }
+
+    function updateCart(){
+
+      const cartItems = document.getElementById("cart-items");
+
+      const total = document.getElementById("total");
+
+      const cartCount = document.getElementById("cart-count");
+
+      cartItems.innerHTML = "";
+
+      let totalPrice = 0;
+
+      cart.forEach((item,index)=>{
+
+        totalPrice += item.price;
+
+        cartItems.innerHTML += `
+          <div class="cart-item">
+            <div>
+              ${item.name} - ₹${item.price}
+            </div>
+
+            <button onclick="removeItem(${index})">
+              Remove
+            </button>
+          </div>
+        `;
+      });
+
+      total.innerText = totalPrice;
+
+      cartCount.innerText = cart.length;
+    }
+
+    function removeItem(index){
+
+      cart.splice(index,1);
+
+      updateCart();
+    }
+
+  </script>
+
+</body>
+</html>
